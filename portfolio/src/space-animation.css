@@ -1,0 +1,205 @@
+/* Space-themed animations for portfolio */
+
+/* Twinkle animation for stars */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+/* Slower pulse animation for glowing elements */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.95);
+  }
+}
+
+/* Very slow spin for galaxy elements */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Slow orbit animation for planets */
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Shooting star animation */
+@keyframes shootingStar {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200px) translateY(100px);
+    opacity: 0;
+  }
+}
+
+/* Very slow float movement for nebula elements */
+@keyframes float {
+  0%, 100% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(10px, 10px);
+  }
+  50% {
+    transform: translate(5px, 20px);
+  }
+  75% {
+    transform: translate(-10px, 10px);
+  }
+}
+
+/* Gradient animation for backgrounds */
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Text gradient animation */
+@keyframes gradient-text {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Slow bouncing animation */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Blink animation for cursor */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Fade in animation */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Scroll down indicator animation */
+@keyframes scroll-down {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+}
+
+/* Utility classes */
+.animate-twinkle {
+  animation: twinkle var(--twinkle-duration, 3s) ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse var(--pulse-duration, 6s) ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin var(--spin-duration, 60s) linear infinite;
+}
+
+.animate-orbit {
+  animation: orbit var(--orbit-duration, 30s) linear infinite;
+}
+
+.animate-shooting-star {
+  animation: shootingStar var(--shooting-duration, 4s) ease-out infinite;
+}
+
+.animate-float {
+  animation: float var(--float-duration, 20s) ease-in-out infinite;
+}
+
+.animate-gradient-text {
+  animation: gradient-text 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-scroll-down {
+  animation: scroll-down 2s ease infinite;
+}
+
+/* Make animations more subtle if user prefers reduced motion */
+@media (prefers-reduced-motion) {
+  .animate-twinkle,
+  .animate-pulse-slow,
+  .animate-spin-slow,
+  .animate-orbit,
+  .animate-shooting-star,
+  .animate-float,
+  .animate-gradient-text,
+  .animate-bounce-slow,
+  .animate-blink,
+  .animate-fade-in,
+  .animate-scroll-down {
+    animation-duration: calc(var(--duration, 1s) * 3);
+    animation-play-state: paused;
+  }
+}
