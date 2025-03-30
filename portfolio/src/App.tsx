@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { CustomHero } from './components/portfolio-dark-mode.tsx';
 import { AnimatedNav, InteractiveSkills } from './components/portfolio-dark-mode-nav-skills.tsx';
-import { CreativeProjects, InteractiveContact, Footer } from './components/portfolio-projects-contact.tsx';
+import { CreativeProjects, InteractiveContact, Footer } from './components/background/portfolio-projects-contact.tsx';
 import { Book, Calendar, MapPin } from 'lucide-react';
 import './styles/index.css';
 import './styles/space-animation.css'; // Import the new space animation CSS
-import EnhancedBackground from './components/enhanced-background.tsx';
-import EnhancedHero from './components/hero-implementation.tsx';
+import EnhancedBackground from './components/background/enhanced-background.tsx';
+import EnhancedHero from './components/background/hero-implementation.tsx';
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('home');
