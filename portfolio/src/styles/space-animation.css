@@ -1,19 +1,64 @@
-/* Space-themed animations for portfolio */
+/* src/styles/space-animation.css */
+/* Enhanced space animations with performance optimizations */
 
-/* Twinkle animation for stars */
-@keyframes twinkle {
+/* Space background styles */
+.space-bg {
+  background-color: #0d111e;
+  background-image:
+    radial-gradient(circle at 20% 35%, rgba(76, 0, 176, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 60%, rgba(41, 0, 102, 0.1) 0%, transparent 40%);
+}
+
+/* Nightsky backdrop with subtle gradient */
+.nightsky-bg {
+  background: linear-gradient(to bottom, #0f1729 0%, #171429 100%);
+}
+
+/* Star field overlay */
+.stars-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="0.5" height="0.5" fill="white" opacity="0.5" x="10" y="10" /><rect width="0.5" height="0.5" fill="white" opacity="0.7" x="30" y="25" /><rect width="0.5" height="0.5" fill="white" opacity="0.5" x="15" y="60" /><rect width="0.5" height="0.5" fill="white" opacity="0.7" x="60" y="15" /><rect width="0.5" height="0.5" fill="white" opacity="0.5" x="85" y="30" /><rect width="0.5" height="0.5" fill="white" opacity="0.7" x="120" y="60" /><rect width="0.5" height="0.5" fill="white" opacity="0.5" x="100" y="80" /><rect width="0.5" height="0.5" fill="white" opacity="0.7" x="50" y="95" /><rect width="0.5" height="0.5" fill="white" opacity="0.5" x="140" y="25" /><rect width="0.5" height="0.5" fill="white" opacity="0.7" x="170" y="50" /><rect width="0.5" height="0.5" fill="white" opacity="0.5" x="190" y="90" /><rect width="0.5" height="0.5" fill="white" opacity="0.7" x="165" y="120" /><rect width="0.5" height="0.5" fill="white" opacity="0.5" x="130" y="150" /><rect width="0.5" height="0.5" fill="white" opacity="0.7" x="95" y="170" /><rect width="0.5" height="0.5" fill="white" opacity="0.5" x="30" y="190" /><rect width="0.5" height="0.5" fill="white" opacity="0.7" x="10" y="160" /></svg>');
+  background-repeat: repeat;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Glow effects */
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(to right, #6366f1, #a855f7, #ec4899);
+  filter: blur(15px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.glow-effect:hover::before {
+  opacity: 0.5;
+}
+
+/* Base keyframes for space animations */
+@keyframes float {
   0%, 100% {
-    opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
   }
   50% {
-    opacity: 0.5;
-    transform: scale(0.8);
+    transform: translateY(-10px);
   }
 }
 
-/* Slower pulse animation for glowing elements */
-@keyframes pulse {
+@keyframes pulse-slow {
   0%, 100% {
     opacity: 1;
     transform: scale(1);
@@ -24,7 +69,24 @@
   }
 }
 
-/* Very slow spin for galaxy elements */
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(var(--orbit-distance)) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(var(--orbit-distance)) rotate(-360deg);
+  }
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -34,18 +96,73 @@
   }
 }
 
-/* Slow orbit animation for planets */
-@keyframes orbit {
-  from {
-    transform: rotate(0deg);
+@keyframes gradient-text {
+  0% {
+    background-position: 0% 50%;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-/* Shooting star animation */
-@keyframes shootingStar {
+@keyframes scroll-down {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0) translateZ(0);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0);
+  }
+}
+
+@keyframes wave-reverse {
+  0% {
+    transform: translateX(-50%) translateZ(0);
+  }
+  50% {
+    transform: translateX(-25%) translateZ(0);
+  }
+  100% {
+    transform: translateX(0%) translateZ(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes shooting-star {
   0% {
     transform: translateX(0) translateY(0);
     opacity: 0;
@@ -57,58 +174,11 @@
     opacity: 1;
   }
   100% {
-    transform: translateX(200px) translateY(100px);
+    transform: translateX(300px) translateY(-300px);
     opacity: 0;
   }
 }
 
-/* Very slow float movement for nebula elements */
-@keyframes float {
-  0%, 100% {
-    transform: translate(0px, 0px);
-  }
-  25% {
-    transform: translate(10px, 10px);
-  }
-  50% {
-    transform: translate(5px, 20px);
-  }
-  75% {
-    transform: translate(-10px, 10px);
-  }
-}
-
-/* Gradient animation for backgrounds */
-@keyframes gradient {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-/* Text gradient animation */
-@keyframes gradient-text {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-/* Slow bouncing animation */
-@keyframes bounce-slow {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/* Blink animation for cursor */
 @keyframes blink {
   0%, 100% {
     opacity: 1;
@@ -118,88 +188,285 @@
   }
 }
 
-/* Fade in animation */
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Scroll down indicator animation */
-@keyframes scroll-down {
-  0% {
-    transform: translateY(0);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(8px);
-    opacity: 0;
-  }
-}
-
-/* Utility classes */
-.animate-twinkle {
-  animation: twinkle var(--twinkle-duration, 3s) ease-in-out infinite;
+/* Utility classes for animations */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-pulse-slow {
-  animation: pulse var(--pulse-duration, 6s) ease-in-out infinite;
+  animation: pulse-slow 4s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
-.animate-spin-slow {
-  animation: spin var(--spin-duration, 60s) linear infinite;
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+  will-change: opacity;
 }
 
 .animate-orbit {
-  animation: orbit var(--orbit-duration, 30s) linear infinite;
+  --orbit-distance: 100px;
+  animation: orbit 20s linear infinite;
+  will-change: transform;
 }
 
-.animate-shooting-star {
-  animation: shootingStar var(--shooting-duration, 4s) ease-out infinite;
+.animate-spin {
+  animation: spin 20s linear infinite;
+  will-change: transform;
 }
 
-.animate-float {
-  animation: float var(--float-duration, 20s) ease-in-out infinite;
+.animate-spin-slow {
+  animation: spin 60s linear infinite;
+  will-change: transform;
 }
 
 .animate-gradient-text {
-  animation: gradient-text 8s ease infinite;
-  background-size: 200% 200%;
+  background-size: 200% auto;
+  animation: gradient-text 4s linear infinite;
+  will-change: background-position;
 }
 
-.animate-bounce-slow {
-  animation: bounce-slow 3s infinite;
+.animate-scroll-down {
+  animation: scroll-down 1.5s ease-in-out infinite;
+  will-change: transform;
 }
 
-.animate-blink {
-  animation: blink 1s step-end infinite;
+.animate-wave {
+  animation: wave 25s linear infinite;
+  will-change: transform;
+}
+
+.animate-wave-slow {
+  animation: wave 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-wave-reverse {
+  animation: wave-reverse 30s linear infinite;
+  will-change: transform;
 }
 
 .animate-fade-in {
   animation: fade-in 0.5s ease-out forwards;
 }
 
-.animate-scroll-down {
-  animation: scroll-down 2s ease infinite;
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+  will-change: transform;
 }
 
-/* Make animations more subtle if user prefers reduced motion */
-@media (prefers-reduced-motion) {
-  .animate-twinkle,
-  .animate-pulse-slow,
-  .animate-spin-slow,
-  .animate-orbit,
-  .animate-shooting-star,
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Parallax container */
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Parallax layer base styles */
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+/* Different depth layers for parallax */
+.parallax-depth-1 {
+  transform: translateZ(-100px) scale(1.5);
+}
+
+.parallax-depth-2 {
+  transform: translateZ(-200px) scale(2);
+}
+
+.parallax-depth-3 {
+  transform: translateZ(-300px) scale(2.5);
+}
+
+/* Star particle */
+.star-particle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: white;
+  pointer-events: none;
+}
+
+/* Planet styles */
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--planet-color-light), var(--planet-color-dark));
+  box-shadow: inset -10px -10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.planet-1 {
+  --planet-color-light: #6366f1;
+  --planet-color-dark: #4338ca;
+}
+
+.planet-2 {
+  --planet-color-light: #a855f7;
+  --planet-color-dark: #7e22ce;
+}
+
+.planet-3 {
+  --planet-color-light: #ec4899;
+  --planet-color-dark: #be185d;
+}
+
+/* Orbital path */
+.orbit-path {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+/* Shooting star */
+.shooting-star {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(to right, transparent, white, transparent);
+  transform-origin: left center;
+  animation: shooting-star 3s ease-out infinite;
+  animation-delay: var(--delay, 0s);
+  opacity: 0;
+}
+
+/* Space dust particles */
+.space-dust {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: float var(--float-duration, 10s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+  opacity: var(--dust-opacity, 0.5);
+}
+
+/* Nebula backdrop */
+.nebula-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 35%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(167, 139, 250, 0.1) 0%, transparent 45%),
+    radial-gradient(circle at 40% 60%, rgba(236, 72, 153, 0.08) 0%, transparent 40%);
+  filter: blur(30px);
+  opacity: 0.6;
+  mix-blend-mode: screen;
+}
+
+/* Cosmic rays */
+.cosmic-ray {
+  position: absolute;
+  width: 150px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: rotate(var(--ray-angle, 45deg));
+  opacity: 0.3;
+  filter: blur(1px);
+}
+
+/* Space-themed buttons */
+.space-button {
+  position: relative;
+  overflow: hidden;
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: white;
+  border-radius: 8px;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.space-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(99, 102, 241, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.space-button:hover {
+  border-color: rgba(99, 102, 241, 0.8);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+}
+
+.space-button:hover::before {
+  left: 100%;
+}
+
+/* Hover card with space theme */
+.space-card {
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.space-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    transparent 50%,
+    rgba(99, 102, 241, 0.1) 100%
+  );
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.space-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.space-card:hover::before {
+  opacity: 1;
+}
+
+/* Media query for reduced animations */
+@media (prefers-reduced-motion: reduce) {
   .animate-float,
+  .animate-pulse-slow,
+  .animate-twinkle,
+  .animate-orbit,
+  .animate-spin,
+  .animate-spin-slow,
   .animate-gradient-text,
+  .animate-scroll-down,
+  .animate-wave,
+  .animate-wave-slow,
+  .animate-wave-reverse,
   .animate-bounce-slow,
-  .animate-blink,
-  .animate-fade-in,
-  .animate-scroll-down {
-    animation-duration: calc(var(--duration, 1s) * 3);
-    animation-play-state: paused;
+  .shooting-star,
+  .space-dust {
+    animation: none !important;
+    transition: none !important;
   }
 }

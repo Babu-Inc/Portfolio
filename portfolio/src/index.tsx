@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
+import './styles/animations.css';
+import './styles/space-animation.css';
 import App from './App.tsx';
+import { AnimationProvider } from './components/AnimationProvider.tsx';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -9,6 +12,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App />
+    <AnimationProvider>
+      <App />
+    </AnimationProvider>
   </React.StrictMode>
 );

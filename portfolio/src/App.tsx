@@ -1,10 +1,13 @@
+// src/App.tsx
+// Emergency simplified version with minimal animation hooks
+
 import React, { useState, useEffect } from 'react';
 import { CustomHero } from './components/portfolio-dark-mode.tsx';
 import { AnimatedNav, InteractiveSkills } from './components/portfolio-dark-mode-nav-skills.tsx';
 import { CreativeProjects, InteractiveContact, Footer } from './components/background/portfolio-projects-contact.tsx';
 import { Book, Calendar, MapPin } from 'lucide-react';
 import './styles/index.css';
-import './styles/space-animation.css'; // Import the new space animation CSS
+import './styles/space-animation.css';
 import EnhancedBackground from './components/background/enhanced-background.tsx';
 import EnhancedHero from './components/background/hero-implementation.tsx';
 
@@ -51,7 +54,6 @@ const App: React.FC = () => {
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
-    // In a real implementation, you'd also toggle classes on the body or update a theme context
   };
 
   // Animated About Section Component
@@ -65,24 +67,26 @@ const App: React.FC = () => {
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <h2 className="text-3xl font-bold text-center text-white mb-3">About Me</h2>
+          <h2 className="text-3xl font-bold text-center text-white mb-3 animate-fade-in">About Me</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-12 rounded-full"></div>
 
           <div className="max-w-3xl mx-auto">
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed animate-fade-in" style={{ animationDelay: '100ms' }}>
               I'm a Computer Information Science student at St. Edwards University with a passion for technology and innovation.
               My expertise spans software development, AI, and data science, allowing me to develop customized solutions for complex problems.
             </p>
-            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed animate-fade-in" style={{ animationDelay: '200ms' }}>
               I'm skilled in collaborating with stakeholders and translating client needs into technical solutions using my programming expertise
               in Python, Java, and AWS services. I have experience in AI-driven applications, cloud computing, and full-stack development.
             </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
+
+            <p className="text-lg text-gray-300 leading-relaxed animate-fade-in" style={{ animationDelay: '300ms' }}>
               I speak and write in English and Urdu, and I am experienced in Hindi. When I'm not coding, I volunteer as an Animal Caretaker,
               providing care for animals and ensuring their well-being.
             </p>
 
-            <div className="mt-12 bg-gray-900/80 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 relative overflow-hidden">
+            <div className="mt-12 bg-gray-900/80 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 relative overflow-hidden animate-fade-in" style={{ animationDelay: '400ms' }}>
               {/* Background gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 to-purple-900/20"></div>
 
@@ -159,17 +163,21 @@ const App: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-gray-800 to-gray-900"></div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <h2 className="text-3xl font-bold text-center text-white mb-3">Work Experience</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-12 rounded-full"></div>
+          <div className="animate-fade-in">
+            <h2 className="text-3xl font-bold text-center text-white mb-3">Work Experience</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 mx-auto mb-12 rounded-full"></div>
+          </div>
 
           <div className="max-w-3xl mx-auto space-y-8">
-            {experiences.map(exp => (
+            {experiences.map((exp, index) => (
               <div
                 key={exp.id}
                 className={`
                   bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-500 transform
                   ${activeCard === exp.id ? 'scale-105 shadow-xl' : 'hover:shadow-xl hover:-translate-y-1'}
+                  animate-fade-in
                 `}
+                style={{ animationDelay: `${index * 200}ms` }}
                 onMouseEnter={() => setActiveCard(exp.id)}
                 onMouseLeave={() => setActiveCard(null)}
               >
