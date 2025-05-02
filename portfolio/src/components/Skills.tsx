@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Code, Database, Server, Terminal, Globe, Cpu, LineChart, Brain, Repeat, FileText, Zap, BarChart, Network, Lock, Shield } from 'lucide-react';
+import { Code, Database, Server, Terminal, Globe, Cpu, LineChart, Brain, Repeat, FileText, Zap, BarChart, Network, Lock, Shield, Cloud, Layout, Layers } from 'lucide-react';
 
 interface Skill {
     name: string;
@@ -91,7 +91,7 @@ const Skills: React.FC = () => {
             category: 'Programming',
             color: 'from-blue-400 to-blue-600',
             proficiency: 5,
-            yearsExperience: 4,
+            yearsExperience: 5,
             description: 'Advanced Python development including web frameworks, data analysis libraries, and machine learning applications.'
         },
         {
@@ -100,7 +100,7 @@ const Skills: React.FC = () => {
             category: 'Programming',
             color: 'from-orange-400 to-red-600',
             proficiency: 4,
-            yearsExperience: 3,
+            yearsExperience: 4,
             description: 'Object-oriented programming, Android development, and enterprise applications.'
         },
         {
@@ -108,9 +108,18 @@ const Skills: React.FC = () => {
             icon: <Code size={20} />,
             category: 'Programming',
             color: 'from-yellow-400 to-yellow-600',
-            proficiency: 4,
-            yearsExperience: 3,
+            proficiency: 5,
+            yearsExperience: 4,
             description: 'Modern JavaScript including ES6+, async programming, and frameworks like React.'
+        },
+        {
+            name: 'TypeScript',
+            icon: <Code size={20} />,
+            category: 'Programming',
+            color: 'from-blue-400 to-blue-600',
+            proficiency: 4,
+            yearsExperience: 2,
+            description: 'Type-safe JavaScript development for building robust web applications with improved maintainability and scalability.'
         },
         {
             name: 'R',
@@ -130,19 +139,46 @@ const Skills: React.FC = () => {
             color: 'from-cyan-400 to-blue-500',
             proficiency: 4,
             yearsExperience: 2,
-            description: 'Frontend development with React, including hooks, context API, and state management.'
+            description: 'Frontend development with React, including hooks, context API, custom components, and state management.'
         },
         {
             name: 'HTML/CSS',
-            icon: <Code size={20} />,
+            icon: <Layout size={20} />,
             category: 'Web Development',
             color: 'from-red-400 to-pink-600',
             proficiency: 4,
             yearsExperience: 3,
             description: 'Semantic HTML, responsive design, CSS Grid/Flexbox, and modern styling techniques.'
         },
+        {
+            name: 'Tailwind CSS',
+            icon: <Layers size={20} />,
+            category: 'Web Development',
+            color: 'from-cyan-400 to-teal-500',
+            proficiency: 4,
+            yearsExperience: 2,
+            description: 'Utility-first CSS framework for creating custom designs without leaving your HTML, with optimized production builds.'
+        },
+        {
+            name: 'Bootstrap',
+            icon: <Layers size={20} />,
+            category: 'Web Development',
+            color: 'from-yellow-400 to-orange-600',
+            proficiency: 3,
+            yearsExperience: 1,
+            description: 'Utility-first CSS framework for creating custom designs without leaving your HTML, with optimized production builds.'
+        },
 
-        // Data Science & AI/ML
+        // AI & ML
+        {
+            name: 'Hugging Face',
+            icon: <Brain size={20} />,
+            category: 'AI Integration',
+            color: 'from-yellow-400 to-yellow-600',
+            proficiency: 3,
+            yearsExperience: 1,
+            description: 'Working with Hugging Face inference APIs, model integration, and AI-powered applications using pre-trained models like DeepSeek-R1.'
+        },
         {
             name: 'TensorFlow',
             icon: <Brain size={20} />,
@@ -171,6 +207,17 @@ const Skills: React.FC = () => {
             description: 'Machine learning algorithms implementation, model training, and evaluation pipelines.'
         },
         {
+            name: 'LangChain',
+            icon: <Repeat size={20} />,
+            category: 'AI Integration',
+            color: 'from-green-400 to-emerald-600',
+            proficiency: 3,
+            yearsExperience: 1,
+            description: 'Building applications with LLMs through composability using the LangChain framework for retrieval-augmented generation (RAG) workflows.'
+        },
+
+        // Data Science
+        {
             name: 'Pandas',
             icon: <Database size={20} />,
             category: 'Data Science',
@@ -188,11 +235,29 @@ const Skills: React.FC = () => {
             yearsExperience: 3,
             description: 'Numerical computing with multi-dimensional arrays and mathematical functions.'
         },
+        {
+            name: 'Data Visualization',
+            icon: <LineChart size={20} />,
+            category: 'Data Science',
+            color: 'from-purple-400 to-pink-600',
+            proficiency: 4,
+            yearsExperience: 2,
+            description: 'Creating interactive visualizations using libraries like Matplotlib, Seaborn, Plotly, and D3.js for data storytelling.'
+        },
+        {
+            name: 'Neural Data Visualization',
+            icon: <Brain size={20} />,
+            category: 'Specialized',
+            color: 'from-indigo-400 to-purple-600',
+            proficiency: 4,
+            yearsExperience: 1,
+            description: 'Specialized visualization and analysis of brain wave data and neural activity patterns for research and application development.'
+        },
 
         // Cloud & Infrastructure
         {
             name: 'AWS Services',
-            icon: <Server size={20} />,
+            icon: <Cloud size={20} />,
             category: 'Cloud Computing',
             color: 'from-orange-400 to-orange-600',
             proficiency: 3,
@@ -202,7 +267,7 @@ const Skills: React.FC = () => {
         {
             name: 'Google Earth Engine',
             icon: <Globe size={20} />,
-            category: 'Data Science',
+            category: 'Specialized',
             color: 'from-green-400 to-emerald-600',
             proficiency: 4,
             yearsExperience: 2,
@@ -216,6 +281,35 @@ const Skills: React.FC = () => {
             proficiency: 3,
             yearsExperience: 2,
             description: 'Containerization of applications and services for consistent development and deployment.'
+        },
+        {
+            name: 'API Integration',
+            icon: <Repeat size={20} />,
+            category: 'Web Development',
+            color: 'from-indigo-400 to-purple-600',
+            proficiency: 4,
+            yearsExperience: 2,
+            description: 'Implementing and consuming RESTful and GraphQL APIs, authentication flows, and third-party service integration.'
+        },
+
+        // Specialized Skills
+        {
+            name: 'Network Security',
+            icon: <Shield size={20} />,
+            category: 'Specialized',
+            color: 'from-red-400 to-orange-600',
+            proficiency: 3,
+            yearsExperience: 1,
+            description: 'Network intrusion detection, security analysis, and implementation of security measures for protecting systems and data.'
+        },
+        {
+            name: 'Environmental Monitoring',
+            icon: <Globe size={20} />,
+            category: 'Specialized',
+            color: 'from-teal-400 to-green-600',
+            proficiency: 3,
+            yearsExperience: 1,
+            description: 'Design and implementation of systems for monitoring environmental conditions using satellite imagery and data analysis.'
         },
 
         // Database

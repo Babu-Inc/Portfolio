@@ -10,6 +10,7 @@ import Contact from './components/Contact.tsx';
 import Footer from './components/Footer.tsx';
 import WorkDetailPage from './components/WorkDetailPage.tsx';
 import SentinelAIDetailPage from './components/projects/SentinelAIDetailPage.tsx';
+import MindSightDetailPage from './components/projects/MindSightDetailPage.tsx';
 import { StarryBackground } from './utils/animationUtils.tsx';
 
 // Reusable section component for cleaner organization and animated backgrounds
@@ -162,6 +163,7 @@ const App: React.FC = () => {
                     </div>
                 } />
                 <Route path="/works/sentinelai" element={<SentinelAIDetailPage />} />
+                <Route path="/works/mindsight" element={<MindSightDetailPage />} />
                 <Route path="/works/:slug" element={<WorkDetailPage />} />
             </Routes>
         </Router>

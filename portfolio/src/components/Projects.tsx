@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Code, Globe, Cpu, Shield, FileText, HardDrive, Eye, Github, ChevronRight } from 'lucide-react';
+import { Code, Globe, Cpu, Shield, FileText, HardDrive, Eye, Github, ChevronRight, Brain } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface Project {
@@ -42,6 +42,18 @@ const Projects: React.FC = () => {
             slug: 'sentinelai'
         },
         {
+            id: 'mindsight',
+            title: 'MindSight',
+            description: 'AI-Powered brain activity visualization and analysis tool using advanced machine learning to interpret neural patterns and mental states.',
+            icon: <Brain size={64} className="text-white" />,
+            color: 'from-indigo-500 to-purple-500',
+            skills: ['React', 'JavaScript', 'Hugging Face API', 'Recharts', 'CSS'],
+            skillColors: ['bg-blue-100 text-blue-800', 'bg-yellow-100 text-yellow-800', 'bg-purple-100 text-purple-800', 'bg-blue-100 text-blue-800', 'bg-blue-100 text-blue-800'],
+            demoLink: 'https://mindsight-app.netlify.app/',
+            codeLink: 'https://github.com/ayaan-cis/MindSight',
+            slug: 'mindsight'
+        },
+        {
             id: 'esports',
             title: 'Esports Manager AI Assistant',
             description: 'LLM-powered digital assistant with a chat interface to make an esports team and answer queries about the players, using RAG workflow.',
@@ -60,16 +72,6 @@ const Projects: React.FC = () => {
             skills: ['React', 'JavaScript', 'Firebase', 'Bootstrap', 'CSS'],
             skillColors: ['bg-blue-100 text-blue-800', 'bg-yellow-100 text-yellow-800', 'bg-amber-100 text-amber-800', 'bg-purple-100 text-purple-800', 'bg-blue-100 text-blue-800'],
             slug: 'peerscribe'
-        },
-        {
-            id: 'datavisualization',
-            title: 'Interactive Data Visualization Dashboard',
-            description: 'Real-time data visualization platform for environmental data with interactive charts and mapping features.',
-            icon: <FileText size={64} className="text-white" />,
-            color: 'from-blue-500 to-indigo-500',
-            skills: ['D3.js', 'React', 'TypeScript', 'Python', 'Flask'],
-            skillColors: ['bg-orange-100 text-orange-800', 'bg-blue-100 text-blue-800', 'bg-blue-100 text-blue-800', 'bg-blue-100 text-blue-800', 'bg-green-100 text-green-800'],
-            slug: 'data-visualization-dashboard'
         },
         {
             id: 'mlmodel',
@@ -138,8 +140,8 @@ const Projects: React.FC = () => {
                                             key={skill}
                                             className={`text-xs font-semibold px-2.5 py-0.5 rounded ${project.skillColors[index % project.skillColors.length]}`}
                                         >
-                      {skill}
-                    </span>
+                                          {skill}
+                                        </span>
                                     ))}
                                 </div>
 
@@ -151,14 +153,14 @@ const Projects: React.FC = () => {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className={`
-                        font-medium flex items-center 
-                        ${project.id === 'fiji' ? 'text-blue-400 hover:text-blue-300' :
-                                                project.id === 'esports' ? 'text-purple-400 hover:text-purple-300' :
-                                                    project.id === 'sentinelai' ? 'text-red-400 hover:text-red-300' :
-                                                        project.id === 'datavisualization' ? 'text-blue-400 hover:text-blue-300' :
+                                              font-medium flex items-center 
+                                              ${project.id === 'fiji' ? 'text-blue-400 hover:text-blue-300' :
+                                                project.id === 'mindsight' ? 'text-indigo-400 hover:text-indigo-300' :
+                                                    project.id === 'esports' ? 'text-purple-400 hover:text-purple-300' :
+                                                        project.id === 'sentinelai' ? 'text-red-400 hover:text-red-300' :
                                                             project.id === 'mlmodel' ? 'text-teal-400 hover:text-teal-300' :
                                                                 'text-green-400 hover:text-green-300'}
-                      `}
+                                            `}
                                         >
                                             <Eye size={16} className="mr-1" />
                                             Demo
@@ -171,14 +173,14 @@ const Projects: React.FC = () => {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className={`
-                        font-medium flex items-center 
-                        ${project.id === 'fiji' ? 'text-blue-400 hover:text-blue-300' :
-                                                project.id === 'esports' ? 'text-purple-400 hover:text-purple-300' :
-                                                    project.id === 'sentinelai' ? 'text-red-400 hover:text-red-300' :
-                                                        project.id === 'datavisualization' ? 'text-blue-400 hover:text-blue-300' :
+                                              font-medium flex items-center 
+                                              ${project.id === 'fiji' ? 'text-blue-400 hover:text-blue-300' :
+                                                project.id === 'mindsight' ? 'text-indigo-400 hover:text-indigo-300' :
+                                                    project.id === 'esports' ? 'text-purple-400 hover:text-purple-300' :
+                                                        project.id === 'sentinelai' ? 'text-red-400 hover:text-red-300' :
                                                             project.id === 'mlmodel' ? 'text-teal-400 hover:text-teal-300' :
                                                                 'text-green-400 hover:text-green-300'}
-                      `}
+                                            `}
                                         >
                                             <Github size={16} className="mr-1" />
                                             Code
@@ -188,14 +190,14 @@ const Projects: React.FC = () => {
                                     <Link
                                         to={`/works/${project.slug}`}
                                         className={`
-                      font-medium flex items-center ml-auto
-                      ${project.id === 'fiji' ? 'text-blue-400 hover:text-blue-300' :
-                                            project.id === 'esports' ? 'text-purple-400 hover:text-purple-300' :
-                                                project.id === 'sentinelai' ? 'text-red-400 hover:text-red-300' :
-                                                    project.id === 'datavisualization' ? 'text-blue-400 hover:text-blue-300' :
+                                          font-medium flex items-center ml-auto
+                                          ${project.id === 'fiji' ? 'text-blue-400 hover:text-blue-300' :
+                                            project.id === 'mindsight' ? 'text-indigo-400 hover:text-indigo-300' :
+                                                project.id === 'esports' ? 'text-purple-400 hover:text-purple-300' :
+                                                    project.id === 'sentinelai' ? 'text-red-400 hover:text-red-300' :
                                                         project.id === 'mlmodel' ? 'text-teal-400 hover:text-teal-300' :
                                                             'text-green-400 hover:text-green-300'}
-                    `}
+                                        `}
                                     >
                                         View project
                                         <ChevronRight
