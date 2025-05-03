@@ -158,7 +158,7 @@ const MindSightDetailPage: React.FC = () => {
                             </p>
                             <div className="flex flex-wrap justify-center gap-4">
                                 <a
-                                    href="https://mindsight-demo.netlify.app/"
+                                    href="https://mindsight-app.netlify.app/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg font-medium hover:from-indigo-500 hover:to-purple-500 transition-all duration-300 shadow-lg hover:shadow-indigo-500/20"
@@ -301,7 +301,7 @@ const MindSightDetailPage: React.FC = () => {
                                             The demo showcases synthetic brain wave data visualization and real-time AI analysis using the DeepSeek-R1 model.
                                         </p>
                                         <a
-                                            href="https://mindsight-demo.netlify.app/"
+                                            href="https://mindsight-app.netlify.app/"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="inline-block px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg font-medium hover:from-indigo-500 hover:to-purple-500 transition-all duration-300 shadow-lg hover:shadow-indigo-500/20"
@@ -489,7 +489,7 @@ const MindSightDetailPage: React.FC = () => {
                                         <div className="aspect-video rounded overflow-hidden relative">
                                             <div className="absolute inset-0 flex items-center justify-center">
                                                 <a
-                                                    href="https://mindsight-demo.netlify.app/"
+                                                    href="https://mindsight-app.netlify.app/"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="px-4 py-2 bg-indigo-600 hover:bg-indigo-500 transition-colors duration-300 rounded flex items-center space-x-2"
