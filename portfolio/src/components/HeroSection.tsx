@@ -81,7 +81,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
             <div className="container mx-auto px-6 relative z-50 text-center">
                 {/* Name with gradient text and backdrop blur effect */}
                 <div className="backdrop-blur-sm bg-gray-900/20 rounded-full py-6 px-8 inline-block mb-6 animate-fade-in">
-                    <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 animate-gradient-text">
+                    <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-300 via-white to-gray-300 animate-gradient-text">
                         Ayaan Syed
                     </h1>
                 </div>
@@ -107,7 +107,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
                         href="https://github.com/ayaan-cis"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 backdrop-blur-sm bg-gray-800/50 rounded-full hover:bg-indigo-600/80 transition-all duration-300 text-gray-300 hover:text-white transform hover:scale-110 hover:shadow-lg hover:shadow-indigo-500/20 animate-float"
+                        className="p-3 backdrop-blur-sm bg-gray-800/50 rounded-full hover:bg-black/80 transition-all duration-300 text-gray-300 hover:text-white transform hover:scale-110 hover:shadow-lg hover:shadow-white/20 animate-float"
                         style={{ animationDelay: '0s' }}
                     >
                         <Github size={24} />
@@ -116,14 +116,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
                         href="http://www.linkedin.com/in/ayaan-syed"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-3 backdrop-blur-sm bg-gray-800/50 rounded-full hover:bg-indigo-600/80 transition-all duration-300 text-gray-300 hover:text-white transform hover:scale-110 hover:shadow-lg hover:shadow-indigo-500/20 animate-float"
+                        className="p-3 backdrop-blur-sm bg-gray-800/50 rounded-full hover:bg-black/80 transition-all duration-300 text-gray-300 hover:text-white transform hover:scale-110 hover:shadow-lg hover:shadow-white/20 animate-float"
                         style={{ animationDelay: '0.3s' }}
                     >
                         <Linkedin size={24} />
                     </a>
                     <a
                         href="mailto:therealyaan9876@gmail.com"
-                        className="p-3 backdrop-blur-sm bg-gray-800/50 rounded-full hover:bg-indigo-600/80 transition-all duration-300 text-gray-300 hover:text-white transform hover:scale-110 hover:shadow-lg hover:shadow-indigo-500/20 animate-float"
+                        className="p-3 backdrop-blur-sm bg-gray-800/50 rounded-full hover:bg-black/80 transition-all duration-300 text-gray-300 hover:text-white transform hover:scale-110 hover:shadow-lg hover:shadow-white/20 animate-float"
                         style={{ animationDelay: '0.6s' }}
                     >
                         <Mail size={24} />
@@ -133,7 +133,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
                 {/* Animated scroll button with glass morphism effect */}
                 <button
                     onClick={() => scrollToSection('about')}
-                    className="animate-bounce-slow backdrop-blur-sm bg-gray-800/30 p-3 rounded-full hover:bg-indigo-600/80 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20 animate-fade-in group"
+                    className="animate-bounce-slow backdrop-blur-sm bg-gray-800/30 p-3 rounded-full hover:bg-black/80 transition-all duration-300 hover:shadow-lg hover:shadow-white/20 animate-fade-in group"
                     style={{ animationDelay: '1.5s' }}
                 >
                     <ArrowDown size={24} className="text-gray-300 group-hover:text-white transition-colors duration-300" />
@@ -143,7 +143,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
                 <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-fade-in" style={{ animationDelay: '1.8s' }}>
                     <span className="text-sm text-gray-400 mb-2 backdrop-blur-sm bg-gray-800/20 px-3 py-1 rounded-full">Scroll Down</span>
                     <div className="w-5 h-10 border border-gray-500 rounded-full flex justify-center backdrop-blur-sm bg-gray-800/10">
-                        <div className="w-1 h-2 bg-indigo-400 rounded-full mt-1 animate-[bounce_1.5s_infinite]"></div>
+                        <div className="w-1 h-2 bg-white rounded-full mt-1 animate-[bounce_1.5s_infinite]"></div>
                     </div>
                 </div>
             </div>

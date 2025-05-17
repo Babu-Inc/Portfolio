@@ -24,12 +24,12 @@ const Header: React.FC<HeaderProps> = ({
         <nav className={`
       fixed w-full z-50 transition-all duration-500
       ${isScrolling
-            ? 'bg-gray-900/90 backdrop-blur-md shadow-lg py-2'
+            ? 'bg-black/90 backdrop-blur-md shadow-lg py-2'
             : 'bg-transparent py-4'}
     `}>
             <div className="container mx-auto px-6 flex justify-between items-center">
                 {/* Logo with animated gradient */}
-                <div className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 animate-gradient-text">
+                <div className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-300 via-white to-gray-300 animate-gradient-text">
                     Ayaan A. Syed
                 </div>
 
@@ -48,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({
                         >
                             <span className="relative z-10 capitalize">{section}</span>
                             {activeSection === section && (
-                                <span className="absolute inset-0 bg-gradient-to-r from-indigo-600/50 to-purple-600/50 rounded-md -z-0 animate-pulse-slow"></span>
+                                <span className="absolute inset-0 bg-gradient-to-r from-gray-800/50 to-black/50 rounded-md -z-0 animate-pulse-slow"></span>
                             )}
                         </button>
                     ))}
@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({
                     {/* Dark Mode Toggle */}
                     <button
                         onClick={toggleDarkMode}
-                        className="p-2 rounded-full bg-gray-800/50 backdrop-blur-sm text-gray-200 hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-indigo-500/20"
+                        className="p-2 rounded-full bg-gray-800/50 backdrop-blur-sm text-gray-200 hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/20"
                         aria-label="Toggle dark mode"
                     >
                         <div className="relative w-5 h-5">
@@ -76,7 +76,7 @@ const Header: React.FC<HeaderProps> = ({
                 <div className="md:hidden flex items-center space-x-3">
                     <button
                         onClick={toggleDarkMode}
-                        className="p-2 rounded-full bg-gray-800/50 backdrop-blur-sm text-gray-200 hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-indigo-500/20"
+                        className="p-2 rounded-full bg-gray-800/50 backdrop-blur-sm text-gray-200 hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-white/20"
                         aria-label="Toggle dark mode"
                     >
                         <div className="relative w-5 h-5">
@@ -105,12 +105,12 @@ const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* Scrollbar Progress Indicator */}
-            <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all duration-300" style={{ width: isScrolling ? '100%' : '0%' }}></div>
+            <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-gray-500 via-white to-gray-500 transition-all duration-300" style={{ width: isScrolling ? '100%' : '0%' }}></div>
 
             {/* Mobile Menu Dropdown with Animation */}
             <div
                 className={`
-          md:hidden bg-gray-900/95 backdrop-blur-lg shadow-xl transform transition-all duration-300 ease-in-out overflow-hidden
+          md:hidden bg-black/95 backdrop-blur-lg shadow-xl transform transition-all duration-300 ease-in-out overflow-hidden
           ${isMenuOpen ? 'max-h-96 py-4 px-6 opacity-100' : 'max-h-0 py-0 px-6 opacity-0'}
         `}
             >
@@ -122,7 +122,7 @@ const Header: React.FC<HeaderProps> = ({
                             className={`
                 text-left py-2 px-3 rounded-md transition-all duration-300
                 ${activeSection === section
-                                ? 'bg-gradient-to-r from-indigo-600/30 to-purple-600/30 text-white'
+                                ? 'bg-gradient-to-r from-gray-800/30 to-black/30 text-white'
                                 : 'text-gray-400 hover:text-gray-200 hover:bg-gray-800/50'}
               `}
                         >

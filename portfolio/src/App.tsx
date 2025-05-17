@@ -24,12 +24,18 @@ const Section: React.FC<{
         <div className="relative">
             {background === 'starry' ? (
                 <StarryBackground
-                    starCount={bgProps.starCount || 100}
+                    starCount={bgProps.starCount || 150}
                     speed={bgProps.speed || 'medium'}
-                    className={bgProps.className || 'opacity-50'}
+                    className={bgProps.className || 'opacity-80'}
+                    starColor="rgba(255, 255, 255, 0.8)"
+                    density={bgProps.density || 'medium'}
+                    shootingStars={bgProps.shootingStars !== false}
+                    glowEffect={bgProps.glowEffect !== false}
+                    parallaxIntensity={bgProps.parallaxIntensity || 'medium'}
+                    nebulae={bgProps.nebulae !== false}
                 />
             ) : (
-                <div className={`absolute inset-0 bg-gradient-to-b ${bgProps.gradient || 'from-gray-900 to-gray-800'}`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-b ${bgProps.gradient || 'from-black to-gray-900'}`}></div>
             )}
             <div className="relative z-10" id={id}>
                 {children}
@@ -92,7 +98,7 @@ const App: React.FC = () => {
         <Router>
             <Routes>
                 <Route path="/" element={
-                    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
+                    <div className={`min-h-screen ${isDarkMode ? 'bg-black text-white' : 'bg-white text-gray-900'}`}>
                         <Header
                             activeSection={activeSection}
                             isScrolling={isScrolling}
@@ -108,7 +114,16 @@ const App: React.FC = () => {
                             <Section
                                 id="home"
                                 background="starry"
-                                bgProps={{ starCount: 150, speed: "slow", className: "opacity-60" }}
+                                bgProps={{
+                                    starCount: 200,
+                                    density: "high",
+                                    speed: "slow",
+                                    className: "opacity-70",
+                                    shootingStars: true,
+                                    glowEffect: true,
+                                    parallaxIntensity: "medium",
+                                    nebulae: true
+                                }}
                             >
                                 <HeroSection scrollToSection={scrollToSection} />
                             </Section>
@@ -117,7 +132,7 @@ const App: React.FC = () => {
                             <Section
                                 id="about"
                                 background="gradient"
-                                bgProps={{ gradient: "from-gray-900 to-gray-800" }}
+                                bgProps={{ gradient: "from-black to-gray-900" }}
                             >
                                 <About />
                             </Section>
@@ -126,7 +141,15 @@ const App: React.FC = () => {
                             <Section
                                 id="experience"
                                 background="starry"
-                                bgProps={{ starCount: 100, speed: "medium", className: "opacity-40" }}
+                                bgProps={{
+                                    starCount: 120,
+                                    density: "medium",
+                                    speed: "medium",
+                                    className: "opacity-50",
+                                    shootingStars: false,
+                                    glowEffect: true,
+                                    parallaxIntensity: "low"
+                                }}
                             >
                                 <Experience />
                             </Section>
@@ -135,7 +158,7 @@ const App: React.FC = () => {
                             <Section
                                 id="projects"
                                 background="gradient"
-                                bgProps={{ gradient: "from-gray-800 to-gray-900" }}
+                                bgProps={{ gradient: "from-gray-900 to-black" }}
                             >
                                 <Projects />
                             </Section>
@@ -144,7 +167,16 @@ const App: React.FC = () => {
                             <Section
                                 id="skills"
                                 background="starry"
-                                bgProps={{ starCount: 120, speed: "slow", className: "opacity-50" }}
+                                bgProps={{
+                                    starCount: 150,
+                                    density: "medium",
+                                    speed: "slow",
+                                    className: "opacity-60",
+                                    shootingStars: true,
+                                    glowEffect: true,
+                                    parallaxIntensity: "medium",
+                                    nebulae: true
+                                }}
                             >
                                 <Skills />
                             </Section>
@@ -153,7 +185,7 @@ const App: React.FC = () => {
                             <Section
                                 id="contact"
                                 background="gradient"
-                                bgProps={{ gradient: "from-gray-900 to-gray-800" }}
+                                bgProps={{ gradient: "from-black to-gray-900" }}
                             >
                                 <Contact />
                             </Section>
