@@ -20,14 +20,16 @@ const Projects: React.FC = () => {
 
     const projects: Project[] = [
         {
-            id: 'fiji',
-            title: 'Fiji Water Discoloration Monitoring',
-            description: 'Cloud-Based Computing Script that leverages Sentinel-2 satellite imagery and Google Earth Engine to monitor water discoloration in Fiji.',
-            icon: <Globe size={64} className="text-white" />,
-            color: 'from-blue-500 to-cyan-500',
-            skills: ['Python', 'Javascript', 'Google Earth Engine', 'ArcGIS Pro'],
-            skillColors: ['bg-blue-100 text-blue-800', 'bg-yellow-100 text-yellow-800', 'bg-green-100 text-green-800', 'bg-blue-100 text-blue-800'],
-            slug: 'fiji-water-monitoring'
+          id: 'goguardian',
+          title: 'GoGuardian',
+          description: 'High-performance API security monitoring system built with Golang, leveraging concurrent processing to detect and mitigate threats in real-time.',
+          icon: <Shield size={64} className="text-white" />,
+          color: 'from-teal-500 to-emerald-500',
+          skills: ['Golang', 'Docker', 'Redis', 'WebSockets', 'Security Analytics'],
+          skillColors: ['bg-blue-100 text-blue-800', 'bg-blue-100 text-blue-800', 'bg-red-100 text-red-800', 'bg-purple-100 text-purple-800', 'bg-red-100 text-red-800'],
+          demoLink: 'https://github.com/ayaan-cis/goguardian',
+          codeLink: 'https://github.com/ayaan-cis/goguardian',
+          slug: 'goguardian'
         },
         {
             id: 'sentinelai',
