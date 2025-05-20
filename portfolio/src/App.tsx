@@ -6,12 +6,14 @@ import About from './components/About.tsx';
 import Experience from './components/Experience.tsx';
 import Projects from './components/Projects.tsx';
 import Skills from './components/Skills.tsx';
+import Certificates from './components/Certificates.tsx';
 import Contact from './components/Contact.tsx';
 import Footer from './components/Footer.tsx';
 import WorkDetailPage from './components/WorkDetailPage.tsx';
 import SentinelAIDetailPage from './components/projects/SentinelAIDetailPage.tsx';
 import MindSightDetailPage from './components/projects/MindSightDetailPage.tsx';
 import GoGuardianDetailPage from './components/projects/GoGuardianDetailPage.tsx';
+import ProjectImportingPage from './components/projects/ProjectImportingPage.tsx';
 import { StarryBackground } from './utils/animationUtils.tsx';
 
 // Reusable section component for cleaner organization and animated backgrounds
@@ -57,8 +59,8 @@ const App: React.FC = () => {
         const handleScroll = () => {
             setIsScrolling(window.scrollY > 50);
 
-            // Find which section is currently in view
-            const sections = ['home', 'about', 'experience', 'projects', 'skills', 'contact'];
+            // Find which section is currently in view - UPDATED to include certificates
+            const sections = ['home', 'about', 'experience', 'projects', 'skills', 'certificates', 'contact'];
             const scrollPosition = window.scrollY + 300;
 
             for (const section of sections) {
@@ -182,6 +184,15 @@ const App: React.FC = () => {
                                 <Skills />
                             </Section>
 
+                            {/* Certificates Section - NEW! */}
+                            <Section
+                                id="certificates"
+                                background="gradient"
+                                bgProps={{ gradient: "from-gray-800 to-gray-900" }}
+                            >
+                                <Certificates />
+                            </Section>
+
                             {/* Contact Section */}
                             <Section
                                 id="contact"
@@ -198,6 +209,14 @@ const App: React.FC = () => {
                 <Route path="/works/sentinelai" element={<SentinelAIDetailPage />} />
                 <Route path="/works/mindsight" element={<MindSightDetailPage />} />
                 <Route path="/works/goguardian" element={<GoGuardianDetailPage />} />
+
+                {/* Routes for projects currently being imported */}
+                <Route path="/works/esports-ai-assistant" element={<ProjectImportingPage />} />
+                <Route path="/works/peerscribe" element={<ProjectImportingPage />} />
+                <Route path="/works/predictive-climate-model" element={<ProjectImportingPage />} />
+                <Route path="/works/fiji-water-monitoring" element={<ProjectImportingPage />} />
+
+                {/* Catch-all route for other projects */}
                 <Route path="/works/:slug" element={<WorkDetailPage />} />
             </Routes>
         </Router>

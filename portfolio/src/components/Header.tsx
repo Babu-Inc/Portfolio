@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({
 
                 {/* Desktop Navigation Links with enhanced active state */}
                 <div className="hidden md:flex space-x-1">
-                    {["home", "about", "experience", "projects", "skills", "contact"].map((section) => (
+                    {["home", "about", "experience", "projects", "skills", "certificates", "contact"].map((section) => (
                         <button
                             key={section}
                             onClick={() => scrollToSection(section)}
@@ -115,7 +115,7 @@ const Header: React.FC<HeaderProps> = ({
         `}
             >
                 <div className="flex flex-col space-y-3">
-                    {["home", "about", "experience", "projects", "skills", "contact"].map((section) => (
+                    {["home", "about", "experience", "projects", "skills", "certificates", "contact"].map((section) => (
                         <button
                             key={section}
                             onClick={() => scrollToSection(section)}
