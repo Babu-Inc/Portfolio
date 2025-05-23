@@ -34,7 +34,20 @@ const Certificates: React.FC = () => {
             description: 'Comprehensive program covering generative AI fundamentals, Microsoft Copilot, and responsible AI practices for business applications.',
             skills: ['Generative AI', 'Microsoft Copilot', 'Artificial Intelligence for Business', 'Responsible AI'],
             icon: <Brain size={24} />,
-            color: 'from-blue-500 to-purple-500'
+            color: 'from-blue-300 to-purple-700'
+        },
+        {
+            id: 'microsoft-azure',
+            title: 'Microsoft Azure AI Essentials Professional Certificate',
+            organization: 'Microsoft and LinkedIn',
+            issueDate: '2025-05-21',
+            credentialId: '99a0ebd757994fc4f83a36307f4dcd645472bf25df0b7b891c70c413a02860c1',
+            verificationUrl: 'https://www.linkedin.com/learning/certificates/99a0ebd757994fc4f83a36307f4dcd645472bf25df0b7b891c70c413a02860c1?u=35179268',
+            category: 'Artificial Intelligence',
+            description: 'Comprehensive program covering generative AI fundamentals, Microsoft Copilot, and responsible AI practices for business applications.',
+            skills: ['Generative AI', 'Microsoft Copilot', 'Artificial Intelligence for Business', 'Responsible AI'],
+            icon: <Brain size={24} />,
+            color: 'from-blue-800 to-blue-400'
         },
         {
             id: 'github-professional',
