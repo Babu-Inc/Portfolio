@@ -27,8 +27,8 @@ const Projects: React.FC = () => {
           color: 'from-teal-500 to-emerald-500',
           skills: ['Golang', 'Docker', 'Redis', 'WebSockets', 'Security Analytics'],
           skillColors: ['bg-blue-100 text-blue-800', 'bg-blue-100 text-blue-800', 'bg-red-100 text-red-800', 'bg-purple-100 text-purple-800', 'bg-red-100 text-red-800'],
-          demoLink: 'https://github.com/ayaan-cis/goguardian',
-          codeLink: 'https://github.com/ayaan-cis/goguardian',
+          demoLink: 'https://github.com/ayaan-cs/goguardian',
+          codeLink: 'https://github.com/ayaan-cs/goguardian',
           slug: 'goguardian'
         },
         {
@@ -40,7 +40,7 @@ const Projects: React.FC = () => {
             skills: ['Python', 'Streamlit', 'Scikit-learn', 'Pandas', 'Network Security'],
             skillColors: ['bg-blue-100 text-blue-800', 'bg-green-100 text-green-800', 'bg-yellow-100 text-yellow-800', 'bg-blue-100 text-blue-800', 'bg-red-100 text-red-800'],
             demoLink: 'https://sentinelaiapp.streamlit.app/',
-            codeLink: 'https://github.com/ayaan-cis/sentinelai',
+            codeLink: 'https://github.com/ayaan-cs/sentinelai',
             slug: 'sentinelai'
         },
         {
@@ -52,7 +52,7 @@ const Projects: React.FC = () => {
             skills: ['React', 'JavaScript', 'Hugging Face API', 'Recharts', 'CSS'],
             skillColors: ['bg-blue-100 text-blue-800', 'bg-yellow-100 text-yellow-800', 'bg-purple-100 text-purple-800', 'bg-blue-100 text-blue-800', 'bg-blue-100 text-blue-800'],
             demoLink: 'https://mindsight-app.netlify.app/',
-            codeLink: 'https://github.com/ayaan-cis/MindSight',
+            codeLink: 'https://github.com/ayaan-cs/MindSight',
             slug: 'mindsight'
         },
         {

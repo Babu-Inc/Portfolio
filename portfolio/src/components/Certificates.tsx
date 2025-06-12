@@ -44,7 +44,7 @@ const Certificates: React.FC = () => {
             credentialId: '99a0ebd757994fc4f83a36307f4dcd645472bf25df0b7b891c70c413a02860c1',
             verificationUrl: 'https://www.linkedin.com/learning/certificates/99a0ebd757994fc4f83a36307f4dcd645472bf25df0b7b891c70c413a02860c1?u=35179268',
             category: 'Artificial Intelligence',
-            description: 'Comprehensive program covering generative AI fundamentals, Microsoft Copilot, and responsible AI practices for business applications.',
+            description: 'Comprehensive training in Microsoft Azure\'s AI services, covering machine learning, cognitive services, and responsible AI implementation for building intelligent cloud-based applications.',
             skills: ['Generative AI', 'Microsoft Copilot', 'Artificial Intelligence for Business', 'Responsible AI'],
             icon: <Brain size={24} />,
             color: 'from-blue-800 to-blue-400'

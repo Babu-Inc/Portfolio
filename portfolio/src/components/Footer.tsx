@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className="flex justify-center mt-4 space-x-6 mb-8">
-                    <a href="https://github.com/ayaan-cis" target="_blank" rel="noopener noreferrer"
+                    <a href="https://github.com/ayaan-cs" target="_blank" rel="noopener noreferrer"
                        className="text-gray-400 hover:text-white transition-colors duration-300 transform hover:scale-110">
                         <Github size={24} />
                         <span className="sr-only">GitHub</span>

@@ -117,12 +117,12 @@ const Contact: React.FC = () => {
                             <div>
                                 <h4 className="text-lg font-medium text-indigo-400">GitHub</h4>
                                 <a
-                                    href="https://github.com/ayaan-cis"
+                                    href="https://github.com/ayaan-cs"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-gray-300 hover:text-white transition-colors duration-300"
                                 >
-                                    github.com/ayaan-cis
+                                    github.com/ayaan-cs
                                 </a>
                             </div>
                         </div>

@@ -104,7 +104,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollToSection }) => {
                 {/* Social links with enhanced hover effects */}
                 <div className="flex justify-center space-x-4 mb-12 animate-slide-up" style={{ animationDelay: '1.2s' }}>
                     <a
-                        href="https://github.com/ayaan-cis"
+                        href="https://github.com/ayaan-cs"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-3 backdrop-blur-sm bg-gray-800/50 rounded-full hover:bg-black/80 transition-all duration-300 text-gray-300 hover:text-white transform hover:scale-110 hover:shadow-lg hover:shadow-white/20 animate-float"
